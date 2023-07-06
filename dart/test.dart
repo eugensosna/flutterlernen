@@ -1,13 +1,20 @@
-class Greeter {
+class Greeter implements IGreetable {
   var greeting;
   var _name;
 
-  sayHello() {
+  String sayHallo(String name) {
     return "$greeting ${this.name}";
   }
 
   get name => _name;
   set name(value) => _name = value;
+}
+
+abstract class IGreetable {
+  String sayHallo(String name);
+  factory IGreetable() {
+    return new Greeter();
+  }
 }
 
 void main() {
@@ -16,9 +23,8 @@ void main() {
   print('$hello $w');
   print(r'$hello $w'); //one params
   print("${hello.toUpperCase()}");
-  Greeter greeter = new Greeter();
-  greeter.greeting = "Hello";
-  greeter.name = "World";
-
-  print(greeter.sayHello());
+  IGreetable myGreetable = new IGreetable();
+  var message = myGreetable.sayHallo("name")
+  
+  print(message);
 }
