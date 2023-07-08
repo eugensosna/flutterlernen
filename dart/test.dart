@@ -1,21 +1,4 @@
-class Greeter implements IGreetable {
-  var greeting;
-  var _name;
-
-  String sayHallo(String name) {
-    return "$greeting ${this.name}";
-  }
-
-  get name => _name;
-  set name(value) => _name = value;
-}
-
-abstract class IGreetable {
-  String sayHallo(String name);
-  factory IGreetable() {
-    return new Greeter();
-  }
-}
+import 'Greeter.dart' as akk;
 
 void main() {
   var hello = "HEllo";
@@ -23,8 +6,9 @@ void main() {
   print('$hello $w');
   print(r'$hello $w'); //one params
   print("${hello.toUpperCase()}");
-  IGreetable myGreetable = new IGreetable();
-  var message = myGreetable.sayHallo("name")
-  
-  print(message);
+  akk.Greeter myGreetable = new akk.Greeter();
+  myGreetable.greeting = hello;
+  var message = myGreetable.sayHallo("name1234");
+
+  print("message: $message");
 }
