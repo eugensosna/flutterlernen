@@ -19,11 +19,6 @@
             "type": "dart",
             "request": "launch",
             "program": "dart/test.dart"
-        },
-        {
-            "name": "Dart & Flutter",
-            "request": "launch",
-            "type": "dart"
-        }
+                }
     ]
 }

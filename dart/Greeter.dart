@@ -18,3 +18,11 @@ class Greeter {
   get name => _name;
   set name(value) => _name = value;
 }
+
+class Hero {
+  late String firstName;
+  late String lastName;
+  String sayName() {
+    return "$lastName, $firstName";
+  }
+}

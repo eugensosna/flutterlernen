@@ -10,5 +10,9 @@ void main() {
   myGreetable.greeting = hello;
   var message = myGreetable.sayHallo("name1234");
 
+  akk.Hero myHero = akk.Hero();
+  myHero.firstName = "Luke";
+  myHero.lastName = "Skywoker";
+  print(myHero.sayName());
   print("message: $message");
 }
