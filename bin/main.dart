@@ -2,6 +2,9 @@ import '../dart/Greeter.dart';
 
 class Welkomer {
   late String name;
+  Welkomer(String name) {
+    this.name = name;
+  }
   printGreeteng() => print("hello $name");
 }
 
@@ -20,7 +23,7 @@ void sayHallo(Welkomer welkomer) {
 void main(List<String> args) {
   Welkomer welkomer;
   // var gree;
-  welkomer = Welkomer();
+  welkomer = Welkomer("Tom");
 
   welkomer.name = "Tom";
   sayHallo(welkomer);
