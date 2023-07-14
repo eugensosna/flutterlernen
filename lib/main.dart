@@ -45,9 +45,13 @@ class _MyHomePageState extends State<MyHomePage> {
       title: "Flutter Playground",
       home: Scaffold(
         body: Center(
-          child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [Text("Child1"), Text("Child2Child2Child2Child2"), Text("Child3")]),
+          child: Row(mainAxisSize: MainAxisSize.min, children: [
+            Text("Child1"),
+            RotatedBox(quarterTurns: 2, child: Text("Child2")),
+            Text("Child2Child2Child2Child2"),
+            ConstrainedBox(constraints: BoxConstraints(minWidth: 200.0), child: Text("Child2")),
+            Text("Child3")
+          ]),
         ),
       ),
     );
