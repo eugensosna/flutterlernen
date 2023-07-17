@@ -11,49 +11,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Flutter Playground",
-      home: Scaffold(
-        body: Center(
-          child: Row(mainAxisSize: MainAxisSize.min, children: [
-            Text("Child1"),
-            RotatedBox(quarterTurns: 2, child: Text("Child2")),
-            Text("Child2Child2Child2Child2"),
-            ConstrainedBox(constraints: BoxConstraints(minWidth: 200.0), child: Text("Child2")),
-            Text("Child3")
-          ]),
-        ),
-      ),
-    );
+        home: Scaffold(
+            appBar: AppBar(title: Text("Flutter Playground!")),
+            drawer: Drawer(
+                child: Column(children: [
+              Text("Item 1"),
+              Divider(
+                indent: 50.5,
+                height: 55,
+              ),
+              Text("Item 2"),
+              Divider(),
+              Text("Item 3")
+            ])),
+            body: Center(child: Text("My new page"))));
   }
 }
